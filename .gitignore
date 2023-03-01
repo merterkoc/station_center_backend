@@ -9,5 +9,6 @@ pubspec.lock
 build/
 .dart_frog
 .idea/
+.env
 # Test related files
 coverage/

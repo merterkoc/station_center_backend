@@ -1,0 +1,15 @@
+environment_config:
+  path: environment_config.dart # optional, result file path against `lib/` folder
+  class: EnvironmentConfig # optional, class name
+  fields: # set of fields for command
+    open_charge_api_key:
+      type: String
+      description: Open Charge API Key
+      required: true
+      default: "ConfigRealKey"
+      dotenv: true
+      config_field: false
+      first_key:
+        env_var: PATH
+  imports:
+    - package:dotenv/dotenv.dart
