@@ -1,12 +1,13 @@
+### Add the key you will get here and run "environment-config-generate" in the terminal
 environment_config:
-  path: environment_config.dart # optional, result file path against `lib/` folder
-  class: EnvironmentConfig # optional, class name
-  fields: # set of fields for command
+  path: environment_config.dart
+  class: EnvironmentConfig
+  fields:
     open_charge_api_key:
       type: String
       description: Open Charge API Key
       required: true
-      default: "ConfigRealKey"
+      default: "api_key_here"
       dotenv: true
       config_field: false
       first_key:

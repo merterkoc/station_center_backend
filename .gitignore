@@ -12,3 +12,4 @@ build/
 .env
 # Test related files
 coverage/
+environment_config.yaml
