@@ -1,4 +1,5 @@
-import '../../bin/model/station/station.dart';
+import 'package:open_charge/model/open_charge_model/station/station.dart';
+
 import '../../repository/station_repository.dart';
 import '../service/station_service.dart';
 
@@ -7,6 +8,6 @@ class StationController implements StationService {
 
   @override
   Future<List<Station>> getStations() async {
-    return await _stationRepository.getStations();
+    return await _stationRepository.getStations() ?? [];
   }
 }

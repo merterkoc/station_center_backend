@@ -8,7 +8,7 @@ import '../routes/api/v1/station/index.dart';
 void main() async {
   final handler =
       const Pipeline().addMiddleware(middleware).addHandler(onRequest);
-  final server = await run(handler, InternetAddress.anyIPv4, 8080);
+  final server = await run(handler, InternetAddress.anyIPv4, 8081);
   print('Serving started at http://${server.address.host}:${server.port}');
 }
 

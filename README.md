@@ -9,9 +9,11 @@
     1. Install Dart SDK
     2. Clone the repo
     3. Run `dart pub get` to install dependencies
-    4. Run `dart run build_runner build` to generate code
-    5. Run `dart run bin/main.dart` to start the server
-    6. Open `http://localhost:8080` in your browser
+    4. Go to open_charge package and create new .env file
+    5. Add `open_charge_api_key='<your-api-key>'` to .env file
+    6. Run `dart run build_runner build` to generate code
+    7. Run `dart run bin/main.dart` to start the server
+    8. Open `http://localhost:8080` in your browser
 
 
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
