@@ -28,7 +28,7 @@ _$_Station _$$_StationFromJson(Map<String, dynamic> json) => _$_Station(
           ?.map((e) =>
               e == null ? null : MediaItems.fromJson(e as Map<String, dynamic>))
           .toList(),
-      isRecentlyVerified: json['IsRecentlyVerified'] as bool?,
+      isMemberShipRequired: json['IsMemberShipRequired'] as bool?,
       dateLastVerified: json['DateLastVerified'] as String?,
       iD: json['ID'] as int?,
       uUID: json['UUID'] as String?,
@@ -61,7 +61,7 @@ Map<String, dynamic> _$$_StationToJson(_$_Station instance) =>
       'SubmissionStatus': instance.submissionStatus?.toJson(),
       'PercentageSimilarity': instance.percentageSimilarity,
       'MediaItems': instance.mediaItems?.map((e) => e?.toJson()).toList(),
-      'IsRecentlyVerified': instance.isRecentlyVerified,
+      'IsMemberShipRequired': instance.isMemberShipRequired,
       'DateLastVerified': instance.dateLastVerified,
       'ID': instance.iD,
       'UUID': instance.uUID,

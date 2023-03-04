@@ -1,21 +1,26 @@
 import 'environment_config.dart';
 
 class OpenChargeConfig {
-  final OPEN_CHARGE_MAP_API_KEY = EnvironmentConfig.openChargeAPIKey;
+  static get OPEN_CHARGE_MAP_API_KEY => EnvironmentConfig.openChargeAPIKey;
 
-  final TIME_OUT = Duration(seconds: 10);
+  static get TIME_OUT => Duration(seconds: 10);
 
-  final OPEN_CHARGE_MAP_API_URL = 'https://api.openchargemap.io';
+  static get OPEN_CHARGE_MAP_API_URL => 'https://api.openchargemap.io';
 
-  final OPEN_CHARGE_MAP_API_POI = 'v3/poi';
+  static get OPEN_CHARGE_MAP_API_POI => 'v3/poi';
 
-  final OPEN_CHARGE_HEADER = {
-    'X-API-Key': EnvironmentConfig.openChargeAPIKey,
-    'User-Agent': 'statio_center/0.0.1',
-  };
+  static get OPEN_CHARGE_HEADER => {
+        'X-API-Key': EnvironmentConfig.openChargeAPIKey,
+        'User-Agent': 'statio_center/0.0.1',
+      };
 
-  final OPEN_CHARGE_OPTIONS = {
-    'countrycode': 'TR',
-    'maxresults': '3000',
-  };
+  static get OPEN_CHARGE_OPTIONS => {
+        'countrycode': 'TR',
+        'maxresults': '3000',
+      };
+
+  static get OPEN_CHARGE_QUERY_PARAMETERS => {
+        'countrycode': 'TR',
+        'maxresults': '3000',
+      };
 }

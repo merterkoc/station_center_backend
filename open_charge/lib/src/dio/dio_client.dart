@@ -10,9 +10,9 @@ class DioClient {
   /// Handles http rest api calls.
   DioClient._() {
     _dio
-      ..options.baseUrl = OpenChargeConfig().OPEN_CHARGE_MAP_API_URL
-      ..options.connectTimeout = OpenChargeConfig().TIME_OUT
-      ..options.receiveTimeout = OpenChargeConfig().TIME_OUT
+      ..options.baseUrl = OpenChargeConfig.OPEN_CHARGE_MAP_API_URL
+      ..options.connectTimeout = OpenChargeConfig.TIME_OUT
+      ..options.receiveTimeout = OpenChargeConfig.TIME_OUT
       ..options.responseType = ResponseType.json
       ..interceptors.add(HttpHeaderInterceptor())
       ..interceptors.add(

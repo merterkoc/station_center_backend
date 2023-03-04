@@ -30,8 +30,6 @@ mixin _$OperatorInfo {
   String? get contactPhone => throw _privateConstructorUsedError;
   @JsonKey(name: 'isPrivateIndividual')
   bool? get isPrivateIndividual => throw _privateConstructorUsedError;
-  @JsonKey(name: 'addressInfo')
-  String? get addressInfo => throw _privateConstructorUsedError;
   @JsonKey(name: 'contactEmail')
   String? get contactEmail => throw _privateConstructorUsedError;
   @JsonKey(name: 'appStoreUrl')
@@ -57,7 +55,6 @@ abstract class $OperatorInfoCopyWith<$Res> {
       @JsonKey(name: 'webSiteUrl') String? webSiteUrl,
       @JsonKey(name: 'contactPhone') String? contactPhone,
       @JsonKey(name: 'isPrivateIndividual') bool? isPrivateIndividual,
-      @JsonKey(name: 'addressInfo') String? addressInfo,
       @JsonKey(name: 'contactEmail') String? contactEmail,
       @JsonKey(name: 'appStoreUrl') String? appStoreUrl,
       @JsonKey(name: 'googlePlayUrl') String? googlePlayUrl});
@@ -81,7 +78,6 @@ class _$OperatorInfoCopyWithImpl<$Res, $Val extends OperatorInfo>
     Object? webSiteUrl = freezed,
     Object? contactPhone = freezed,
     Object? isPrivateIndividual = freezed,
-    Object? addressInfo = freezed,
     Object? contactEmail = freezed,
     Object? appStoreUrl = freezed,
     Object? googlePlayUrl = freezed,
@@ -107,10 +103,6 @@ class _$OperatorInfoCopyWithImpl<$Res, $Val extends OperatorInfo>
           ? _value.isPrivateIndividual
           : isPrivateIndividual // ignore: cast_nullable_to_non_nullable
               as bool?,
-      addressInfo: freezed == addressInfo
-          ? _value.addressInfo
-          : addressInfo // ignore: cast_nullable_to_non_nullable
-              as String?,
       contactEmail: freezed == contactEmail
           ? _value.contactEmail
           : contactEmail // ignore: cast_nullable_to_non_nullable
@@ -141,7 +133,6 @@ abstract class _$$_OperatorInfoCopyWith<$Res>
       @JsonKey(name: 'webSiteUrl') String? webSiteUrl,
       @JsonKey(name: 'contactPhone') String? contactPhone,
       @JsonKey(name: 'isPrivateIndividual') bool? isPrivateIndividual,
-      @JsonKey(name: 'addressInfo') String? addressInfo,
       @JsonKey(name: 'contactEmail') String? contactEmail,
       @JsonKey(name: 'appStoreUrl') String? appStoreUrl,
       @JsonKey(name: 'googlePlayUrl') String? googlePlayUrl});
@@ -163,7 +154,6 @@ class __$$_OperatorInfoCopyWithImpl<$Res>
     Object? webSiteUrl = freezed,
     Object? contactPhone = freezed,
     Object? isPrivateIndividual = freezed,
-    Object? addressInfo = freezed,
     Object? contactEmail = freezed,
     Object? appStoreUrl = freezed,
     Object? googlePlayUrl = freezed,
@@ -189,10 +179,6 @@ class __$$_OperatorInfoCopyWithImpl<$Res>
           ? _value.isPrivateIndividual
           : isPrivateIndividual // ignore: cast_nullable_to_non_nullable
               as bool?,
-      addressInfo: freezed == addressInfo
-          ? _value.addressInfo
-          : addressInfo // ignore: cast_nullable_to_non_nullable
-              as String?,
       contactEmail: freezed == contactEmail
           ? _value.contactEmail
           : contactEmail // ignore: cast_nullable_to_non_nullable
@@ -219,7 +205,6 @@ class _$_OperatorInfo implements _OperatorInfo {
       @JsonKey(name: 'webSiteUrl') this.webSiteUrl,
       @JsonKey(name: 'contactPhone') this.contactPhone,
       @JsonKey(name: 'isPrivateIndividual') required this.isPrivateIndividual,
-      @JsonKey(name: 'addressInfo') this.addressInfo,
       @JsonKey(name: 'contactEmail') this.contactEmail,
       @JsonKey(name: 'appStoreUrl') this.appStoreUrl,
       @JsonKey(name: 'googlePlayUrl') this.googlePlayUrl});
@@ -243,9 +228,6 @@ class _$_OperatorInfo implements _OperatorInfo {
   @JsonKey(name: 'isPrivateIndividual')
   final bool? isPrivateIndividual;
   @override
-  @JsonKey(name: 'addressInfo')
-  final String? addressInfo;
-  @override
   @JsonKey(name: 'contactEmail')
   final String? contactEmail;
   @override
@@ -257,7 +239,7 @@ class _$_OperatorInfo implements _OperatorInfo {
 
   @override
   String toString() {
-    return 'OperatorInfo(id: $id, title: $title, webSiteUrl: $webSiteUrl, contactPhone: $contactPhone, isPrivateIndividual: $isPrivateIndividual, addressInfo: $addressInfo, contactEmail: $contactEmail, appStoreUrl: $appStoreUrl, googlePlayUrl: $googlePlayUrl)';
+    return 'OperatorInfo(id: $id, title: $title, webSiteUrl: $webSiteUrl, contactPhone: $contactPhone, isPrivateIndividual: $isPrivateIndividual, contactEmail: $contactEmail, appStoreUrl: $appStoreUrl, googlePlayUrl: $googlePlayUrl)';
   }
 
   @override
@@ -273,8 +255,6 @@ class _$_OperatorInfo implements _OperatorInfo {
                 other.contactPhone == contactPhone) &&
             (identical(other.isPrivateIndividual, isPrivateIndividual) ||
                 other.isPrivateIndividual == isPrivateIndividual) &&
-            (identical(other.addressInfo, addressInfo) ||
-                other.addressInfo == addressInfo) &&
             (identical(other.contactEmail, contactEmail) ||
                 other.contactEmail == contactEmail) &&
             (identical(other.appStoreUrl, appStoreUrl) ||
@@ -292,7 +272,6 @@ class _$_OperatorInfo implements _OperatorInfo {
       webSiteUrl,
       contactPhone,
       isPrivateIndividual,
-      addressInfo,
       contactEmail,
       appStoreUrl,
       googlePlayUrl);
@@ -323,8 +302,6 @@ abstract class _OperatorInfo implements OperatorInfo {
           final String? contactPhone,
       @JsonKey(name: 'isPrivateIndividual')
           required final bool? isPrivateIndividual,
-      @JsonKey(name: 'addressInfo')
-          final String? addressInfo,
       @JsonKey(name: 'contactEmail')
           final String? contactEmail,
       @JsonKey(name: 'appStoreUrl')
@@ -350,9 +327,6 @@ abstract class _OperatorInfo implements OperatorInfo {
   @override
   @JsonKey(name: 'isPrivateIndividual')
   bool? get isPrivateIndividual;
-  @override
-  @JsonKey(name: 'addressInfo')
-  String? get addressInfo;
   @override
   @JsonKey(name: 'contactEmail')
   String? get contactEmail;

@@ -21,7 +21,7 @@ Station _$StationFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Station {
   @JsonKey(name: 'id')
-  String? get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'connectorCount')
@@ -37,7 +37,7 @@ mixin _$Station {
   @JsonKey(name: 'addressInfo')
   AddressInfo? get addressInfo => throw _privateConstructorUsedError;
   @JsonKey(name: 'connector')
-  Connector? get connector => throw _privateConstructorUsedError;
+  List<Connector>? get connector => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,7 +50,7 @@ abstract class $StationCopyWith<$Res> {
       _$StationCopyWithImpl<$Res, Station>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String? id,
+      {@JsonKey(name: 'id') int? id,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'connectorCount') num? connectorCount,
       @JsonKey(name: 'operatorInfo') OperatorInfo? operatorInfo,
@@ -58,11 +58,10 @@ abstract class $StationCopyWith<$Res> {
       @JsonKey(name: 'isMemberShipRequired') bool? isMemberShipRequired,
       @JsonKey(name: 'usageCost') String? usageCost,
       @JsonKey(name: 'addressInfo') AddressInfo? addressInfo,
-      @JsonKey(name: 'connector') Connector? connector});
+      @JsonKey(name: 'connector') List<Connector>? connector});
 
   $OperatorInfoCopyWith<$Res>? get operatorInfo;
   $AddressInfoCopyWith<$Res>? get addressInfo;
-  $ConnectorCopyWith<$Res>? get connector;
 }
 
 /// @nodoc
@@ -92,7 +91,7 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -124,7 +123,7 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
       connector: freezed == connector
           ? _value.connector
           : connector // ignore: cast_nullable_to_non_nullable
-              as Connector?,
+              as List<Connector>?,
     ) as $Val);
   }
 
@@ -151,18 +150,6 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
       return _then(_value.copyWith(addressInfo: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectorCopyWith<$Res>? get connector {
-    if (_value.connector == null) {
-      return null;
-    }
-
-    return $ConnectorCopyWith<$Res>(_value.connector!, (value) {
-      return _then(_value.copyWith(connector: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -173,7 +160,7 @@ abstract class _$$_StationCopyWith<$Res> implements $StationCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String? id,
+      {@JsonKey(name: 'id') int? id,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'connectorCount') num? connectorCount,
       @JsonKey(name: 'operatorInfo') OperatorInfo? operatorInfo,
@@ -181,14 +168,12 @@ abstract class _$$_StationCopyWith<$Res> implements $StationCopyWith<$Res> {
       @JsonKey(name: 'isMemberShipRequired') bool? isMemberShipRequired,
       @JsonKey(name: 'usageCost') String? usageCost,
       @JsonKey(name: 'addressInfo') AddressInfo? addressInfo,
-      @JsonKey(name: 'connector') Connector? connector});
+      @JsonKey(name: 'connector') List<Connector>? connector});
 
   @override
   $OperatorInfoCopyWith<$Res>? get operatorInfo;
   @override
   $AddressInfoCopyWith<$Res>? get addressInfo;
-  @override
-  $ConnectorCopyWith<$Res>? get connector;
 }
 
 /// @nodoc
@@ -215,7 +200,7 @@ class __$$_StationCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -245,9 +230,9 @@ class __$$_StationCopyWithImpl<$Res>
           : addressInfo // ignore: cast_nullable_to_non_nullable
               as AddressInfo?,
       connector: freezed == connector
-          ? _value.connector
+          ? _value._connector
           : connector // ignore: cast_nullable_to_non_nullable
-              as Connector?,
+              as List<Connector>?,
     ));
   }
 }
@@ -265,15 +250,16 @@ class _$_Station implements _Station {
       @JsonKey(name: 'isMemberShipRequired') this.isMemberShipRequired,
       @JsonKey(name: 'usageCost') this.usageCost,
       @JsonKey(name: 'addressInfo') this.addressInfo,
-      @JsonKey(name: 'connector') this.connector})
-      : _imageList = imageList;
+      @JsonKey(name: 'connector') final List<Connector>? connector})
+      : _imageList = imageList,
+        _connector = connector;
 
   factory _$_Station.fromJson(Map<String, dynamic> json) =>
       _$$_StationFromJson(json);
 
   @override
   @JsonKey(name: 'id')
-  final String? id;
+  final int? id;
   @override
   @JsonKey(name: 'name')
   final String? name;
@@ -303,9 +289,16 @@ class _$_Station implements _Station {
   @override
   @JsonKey(name: 'addressInfo')
   final AddressInfo? addressInfo;
+  final List<Connector>? _connector;
   @override
   @JsonKey(name: 'connector')
-  final Connector? connector;
+  List<Connector>? get connector {
+    final value = _connector;
+    if (value == null) return null;
+    if (_connector is EqualUnmodifiableListView) return _connector;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -331,8 +324,8 @@ class _$_Station implements _Station {
                 other.usageCost == usageCost) &&
             (identical(other.addressInfo, addressInfo) ||
                 other.addressInfo == addressInfo) &&
-            (identical(other.connector, connector) ||
-                other.connector == connector));
+            const DeepCollectionEquality()
+                .equals(other._connector, _connector));
   }
 
   @JsonKey(ignore: true)
@@ -347,7 +340,7 @@ class _$_Station implements _Station {
       isMemberShipRequired,
       usageCost,
       addressInfo,
-      connector);
+      const DeepCollectionEquality().hash(_connector));
 
   @JsonKey(ignore: true)
   @override
@@ -365,21 +358,30 @@ class _$_Station implements _Station {
 
 abstract class _Station implements Station {
   factory _Station(
-      {@JsonKey(name: 'id') final String? id,
-      @JsonKey(name: 'name') final String? name,
-      @JsonKey(name: 'connectorCount') final num? connectorCount,
-      @JsonKey(name: 'operatorInfo') final OperatorInfo? operatorInfo,
-      @JsonKey(name: 'imageList') final List<String>? imageList,
-      @JsonKey(name: 'isMemberShipRequired') final bool? isMemberShipRequired,
-      @JsonKey(name: 'usageCost') final String? usageCost,
-      @JsonKey(name: 'addressInfo') final AddressInfo? addressInfo,
-      @JsonKey(name: 'connector') final Connector? connector}) = _$_Station;
+      {@JsonKey(name: 'id')
+          final int? id,
+      @JsonKey(name: 'name')
+          final String? name,
+      @JsonKey(name: 'connectorCount')
+          final num? connectorCount,
+      @JsonKey(name: 'operatorInfo')
+          final OperatorInfo? operatorInfo,
+      @JsonKey(name: 'imageList')
+          final List<String>? imageList,
+      @JsonKey(name: 'isMemberShipRequired')
+          final bool? isMemberShipRequired,
+      @JsonKey(name: 'usageCost')
+          final String? usageCost,
+      @JsonKey(name: 'addressInfo')
+          final AddressInfo? addressInfo,
+      @JsonKey(name: 'connector')
+          final List<Connector>? connector}) = _$_Station;
 
   factory _Station.fromJson(Map<String, dynamic> json) = _$_Station.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  String? get id;
+  int? get id;
   @override
   @JsonKey(name: 'name')
   String? get name;
@@ -403,7 +405,7 @@ abstract class _Station implements Station {
   AddressInfo? get addressInfo;
   @override
   @JsonKey(name: 'connector')
-  Connector? get connector;
+  List<Connector>? get connector;
   @override
   @JsonKey(ignore: true)
   _$$_StationCopyWith<_$_Station> get copyWith =>

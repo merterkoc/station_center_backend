@@ -8,7 +8,7 @@ part of 'address_info.dart';
 
 _$_AddressInfo _$$_AddressInfoFromJson(Map<String, dynamic> json) =>
     _$_AddressInfo(
-      id: json['title'] as String,
+      id: json['title'] as int,
       title: json['addressInfoLine'] as String,
       province: json['province'] as String?,
       country: json['country'] as String?,

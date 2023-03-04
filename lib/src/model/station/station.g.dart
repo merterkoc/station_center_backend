@@ -7,7 +7,7 @@ part of 'station.dart';
 // **************************************************************************
 
 _$_Station _$$_StationFromJson(Map<String, dynamic> json) => _$_Station(
-      id: json['id'] as String?,
+      id: json['id'] as int?,
       name: json['name'] as String?,
       connectorCount: json['connectorCount'] as num?,
       operatorInfo: json['operatorInfo'] == null
@@ -21,9 +21,9 @@ _$_Station _$$_StationFromJson(Map<String, dynamic> json) => _$_Station(
       addressInfo: json['addressInfo'] == null
           ? null
           : AddressInfo.fromJson(json['addressInfo'] as Map<String, dynamic>),
-      connector: json['connector'] == null
-          ? null
-          : Connector.fromJson(json['connector'] as Map<String, dynamic>),
+      connector: (json['connector'] as List<dynamic>?)
+          ?.map((e) => Connector.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_StationToJson(_$_Station instance) =>
@@ -36,5 +36,5 @@ Map<String, dynamic> _$$_StationToJson(_$_Station instance) =>
       'isMemberShipRequired': instance.isMemberShipRequired,
       'usageCost': instance.usageCost,
       'addressInfo': instance.addressInfo?.toJson(),
-      'connector': instance.connector?.toJson(),
+      'connector': instance.connector?.map((e) => e.toJson()).toList(),
     };

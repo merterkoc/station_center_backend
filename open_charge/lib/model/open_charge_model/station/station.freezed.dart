@@ -34,8 +34,8 @@ mixin _$Station {
   String? get percentageSimilarity => throw _privateConstructorUsedError;
   @JsonKey(name: 'MediaItems')
   List<MediaItems?>? get mediaItems => throw _privateConstructorUsedError;
-  @JsonKey(name: 'IsRecentlyVerified')
-  bool? get isRecentlyVerified => throw _privateConstructorUsedError;
+  @JsonKey(name: 'IsMemberShipRequired')
+  bool? get isMemberShipRequired => throw _privateConstructorUsedError;
   @JsonKey(name: 'DateLastVerified')
   String? get dateLastVerified => throw _privateConstructorUsedError;
   @JsonKey(name: 'ID')
@@ -89,7 +89,7 @@ abstract class $StationCopyWith<$Res> {
       @JsonKey(name: 'SubmissionStatus') SubmissionStatus? submissionStatus,
       @JsonKey(name: 'PercentageSimilarity') String? percentageSimilarity,
       @JsonKey(name: 'MediaItems') List<MediaItems?>? mediaItems,
-      @JsonKey(name: 'IsRecentlyVerified') bool? isRecentlyVerified,
+      @JsonKey(name: 'IsMemberShipRequired') bool? isMemberShipRequired,
       @JsonKey(name: 'DateLastVerified') String? dateLastVerified,
       @JsonKey(name: 'ID') int? iD,
       @JsonKey(name: 'UUID') String? uUID,
@@ -136,7 +136,7 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
     Object? submissionStatus = freezed,
     Object? percentageSimilarity = freezed,
     Object? mediaItems = freezed,
-    Object? isRecentlyVerified = freezed,
+    Object? isMemberShipRequired = freezed,
     Object? dateLastVerified = freezed,
     Object? iD = freezed,
     Object? uUID = freezed,
@@ -184,9 +184,9 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
           ? _value.mediaItems
           : mediaItems // ignore: cast_nullable_to_non_nullable
               as List<MediaItems?>?,
-      isRecentlyVerified: freezed == isRecentlyVerified
-          ? _value.isRecentlyVerified
-          : isRecentlyVerified // ignore: cast_nullable_to_non_nullable
+      isMemberShipRequired: freezed == isMemberShipRequired
+          ? _value.isMemberShipRequired
+          : isMemberShipRequired // ignore: cast_nullable_to_non_nullable
               as bool?,
       dateLastVerified: freezed == dateLastVerified
           ? _value.dateLastVerified
@@ -347,7 +347,7 @@ abstract class _$$_StationCopyWith<$Res> implements $StationCopyWith<$Res> {
       @JsonKey(name: 'SubmissionStatus') SubmissionStatus? submissionStatus,
       @JsonKey(name: 'PercentageSimilarity') String? percentageSimilarity,
       @JsonKey(name: 'MediaItems') List<MediaItems?>? mediaItems,
-      @JsonKey(name: 'IsRecentlyVerified') bool? isRecentlyVerified,
+      @JsonKey(name: 'IsMemberShipRequired') bool? isMemberShipRequired,
       @JsonKey(name: 'DateLastVerified') String? dateLastVerified,
       @JsonKey(name: 'ID') int? iD,
       @JsonKey(name: 'UUID') String? uUID,
@@ -397,7 +397,7 @@ class __$$_StationCopyWithImpl<$Res>
     Object? submissionStatus = freezed,
     Object? percentageSimilarity = freezed,
     Object? mediaItems = freezed,
-    Object? isRecentlyVerified = freezed,
+    Object? isMemberShipRequired = freezed,
     Object? dateLastVerified = freezed,
     Object? iD = freezed,
     Object? uUID = freezed,
@@ -445,9 +445,9 @@ class __$$_StationCopyWithImpl<$Res>
           ? _value._mediaItems
           : mediaItems // ignore: cast_nullable_to_non_nullable
               as List<MediaItems?>?,
-      isRecentlyVerified: freezed == isRecentlyVerified
-          ? _value.isRecentlyVerified
-          : isRecentlyVerified // ignore: cast_nullable_to_non_nullable
+      isMemberShipRequired: freezed == isMemberShipRequired
+          ? _value.isMemberShipRequired
+          : isMemberShipRequired // ignore: cast_nullable_to_non_nullable
               as bool?,
       dateLastVerified: freezed == dateLastVerified
           ? _value.dateLastVerified
@@ -533,7 +533,7 @@ class _$_Station implements _Station {
       @JsonKey(name: 'SubmissionStatus') this.submissionStatus,
       @JsonKey(name: 'PercentageSimilarity') this.percentageSimilarity,
       @JsonKey(name: 'MediaItems') final List<MediaItems?>? mediaItems,
-      @JsonKey(name: 'IsRecentlyVerified') this.isRecentlyVerified,
+      @JsonKey(name: 'IsMemberShipRequired') this.isMemberShipRequired,
       @JsonKey(name: 'DateLastVerified') this.dateLastVerified,
       @JsonKey(name: 'ID') this.iD,
       @JsonKey(name: 'UUID') this.uUID,
@@ -587,8 +587,8 @@ class _$_Station implements _Station {
   }
 
   @override
-  @JsonKey(name: 'IsRecentlyVerified')
-  final bool? isRecentlyVerified;
+  @JsonKey(name: 'IsMemberShipRequired')
+  final bool? isMemberShipRequired;
   @override
   @JsonKey(name: 'DateLastVerified')
   final String? dateLastVerified;
@@ -651,7 +651,7 @@ class _$_Station implements _Station {
 
   @override
   String toString() {
-    return 'Station(dataProvider: $dataProvider, operatorInfo: $operatorInfo, usageType: $usageType, statusType: $statusType, submissionStatus: $submissionStatus, percentageSimilarity: $percentageSimilarity, mediaItems: $mediaItems, isRecentlyVerified: $isRecentlyVerified, dateLastVerified: $dateLastVerified, iD: $iD, uUID: $uUID, dataProviderID: $dataProviderID, dataProvidersReference: $dataProvidersReference, operatorID: $operatorID, usageTypeID: $usageTypeID, usageCost: $usageCost, addressInfo: $addressInfo, connections: $connections, numberOfPoints: $numberOfPoints, datePlanned: $datePlanned, statusTypeID: $statusTypeID, dateLastStatusUpdate: $dateLastStatusUpdate, dataQualityLevel: $dataQualityLevel, dateCreated: $dateCreated, submissionStatusTypeID: $submissionStatusTypeID)';
+    return 'Station(dataProvider: $dataProvider, operatorInfo: $operatorInfo, usageType: $usageType, statusType: $statusType, submissionStatus: $submissionStatus, percentageSimilarity: $percentageSimilarity, mediaItems: $mediaItems, isMemberShipRequired: $isMemberShipRequired, dateLastVerified: $dateLastVerified, iD: $iD, uUID: $uUID, dataProviderID: $dataProviderID, dataProvidersReference: $dataProvidersReference, operatorID: $operatorID, usageTypeID: $usageTypeID, usageCost: $usageCost, addressInfo: $addressInfo, connections: $connections, numberOfPoints: $numberOfPoints, datePlanned: $datePlanned, statusTypeID: $statusTypeID, dateLastStatusUpdate: $dateLastStatusUpdate, dataQualityLevel: $dataQualityLevel, dateCreated: $dateCreated, submissionStatusTypeID: $submissionStatusTypeID)';
   }
 
   @override
@@ -673,8 +673,8 @@ class _$_Station implements _Station {
                 other.percentageSimilarity == percentageSimilarity) &&
             const DeepCollectionEquality()
                 .equals(other._mediaItems, _mediaItems) &&
-            (identical(other.isRecentlyVerified, isRecentlyVerified) ||
-                other.isRecentlyVerified == isRecentlyVerified) &&
+            (identical(other.isMemberShipRequired, isMemberShipRequired) ||
+                other.isMemberShipRequired == isMemberShipRequired) &&
             (identical(other.dateLastVerified, dateLastVerified) ||
                 other.dateLastVerified == dateLastVerified) &&
             (identical(other.iD, iD) || other.iD == iD) &&
@@ -720,7 +720,7 @@ class _$_Station implements _Station {
         submissionStatus,
         percentageSimilarity,
         const DeepCollectionEquality().hash(_mediaItems),
-        isRecentlyVerified,
+        isMemberShipRequired,
         dateLastVerified,
         iD,
         uUID,
@@ -770,8 +770,8 @@ abstract class _Station implements Station {
           final String? percentageSimilarity,
       @JsonKey(name: 'MediaItems')
           final List<MediaItems?>? mediaItems,
-      @JsonKey(name: 'IsRecentlyVerified')
-          final bool? isRecentlyVerified,
+      @JsonKey(name: 'IsMemberShipRequired')
+          final bool? isMemberShipRequired,
       @JsonKey(name: 'DateLastVerified')
           final String? dateLastVerified,
       @JsonKey(name: 'ID')
@@ -831,8 +831,8 @@ abstract class _Station implements Station {
   @JsonKey(name: 'MediaItems')
   List<MediaItems?>? get mediaItems;
   @override
-  @JsonKey(name: 'IsRecentlyVerified')
-  bool? get isRecentlyVerified;
+  @JsonKey(name: 'IsMemberShipRequired')
+  bool? get isMemberShipRequired;
   @override
   @JsonKey(name: 'DateLastVerified')
   String? get dateLastVerified;

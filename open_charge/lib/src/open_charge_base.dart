@@ -12,7 +12,8 @@ class OpenChargeApi {
   Future<List<Station>?> getStations() async {
     print(Env.key);
     final request = await dioClient.get('/v3/poi',
-        options: Options(headers: OpenChargeConfig().OPEN_CHARGE_OPTIONS));
+        queryParameters: OpenChargeConfig.OPEN_CHARGE_QUERY_PARAMETERS,
+        options: Options(headers: OpenChargeConfig.OPEN_CHARGE_OPTIONS));
     if (request.isSuccess) {
       List<Station> stations = [];
       request.data.forEach((element) {

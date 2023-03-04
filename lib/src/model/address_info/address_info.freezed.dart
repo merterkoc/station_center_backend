@@ -21,7 +21,7 @@ AddressInfo _$AddressInfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AddressInfo {
   @JsonKey(name: 'title')
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'addressInfoLine')
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'province')
@@ -50,7 +50,7 @@ abstract class $AddressInfoCopyWith<$Res> {
       _$AddressInfoCopyWithImpl<$Res, AddressInfo>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'title') String id,
+      {@JsonKey(name: 'title') int id,
       @JsonKey(name: 'addressInfoLine') String title,
       @JsonKey(name: 'province') String? province,
       @JsonKey(name: 'country') String? country,
@@ -86,7 +86,7 @@ class _$AddressInfoCopyWithImpl<$Res, $Val extends AddressInfo>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -128,7 +128,7 @@ abstract class _$$_AddressInfoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'title') String id,
+      {@JsonKey(name: 'title') int id,
       @JsonKey(name: 'addressInfoLine') String title,
       @JsonKey(name: 'province') String? province,
       @JsonKey(name: 'country') String? country,
@@ -162,7 +162,7 @@ class __$$_AddressInfoCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -214,7 +214,7 @@ class _$_AddressInfo implements _AddressInfo {
 
   @override
   @JsonKey(name: 'title')
-  final String id;
+  final int id;
   @override
   @JsonKey(name: 'addressInfoLine')
   final String title;
@@ -283,7 +283,7 @@ class _$_AddressInfo implements _AddressInfo {
 
 abstract class _AddressInfo implements AddressInfo {
   factory _AddressInfo(
-          {@JsonKey(name: 'title') required final String id,
+          {@JsonKey(name: 'title') required final int id,
           @JsonKey(name: 'addressInfoLine') required final String title,
           @JsonKey(name: 'province') required final String? province,
           @JsonKey(name: 'country') required final String? country,
@@ -298,7 +298,7 @@ abstract class _AddressInfo implements AddressInfo {
 
   @override
   @JsonKey(name: 'title')
-  String get id;
+  int get id;
   @override
   @JsonKey(name: 'addressInfoLine')
   String get title;
