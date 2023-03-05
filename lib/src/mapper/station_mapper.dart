@@ -6,7 +6,7 @@ import 'package:station_center_backend/src/model/station/station.dart' as sc;
 
 import 'mapper.dart';
 
-class ToSource implements Mapper<Station, sc.Station> {
+class StationMapper implements Mapper<Station, sc.Station> {
   @override
   sc.Station call(Station object) {
     return sc.Station(

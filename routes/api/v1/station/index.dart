@@ -1,12 +1,15 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
-
-import '../../../../api/controller/station_controller.dart';
+import 'package:station_center_backend/src/api/controller/station_controller.dart';
 
 Future<Response> onRequest(RequestContext context) async {
-  StationController stationController = StationController();
-  final stationList = await stationController.getStations();
+  final stationList = await StationController().getStationsFromMongoDb();
   return Response(
-      body: jsonEncode(stationList), encoding: Encoding.getByName('utf-8'));
+      body: jsonEncode(stationList),
+      headers: {
+        HttpHeaders.contentTypeHeader: ContentType.json.value,
+      },
+      encoding: Encoding.getByName('utf-8'));
 }

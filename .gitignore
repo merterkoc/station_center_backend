@@ -10,6 +10,7 @@ build/
 .dart_frog
 .idea/
 .env
+lib/env/env.g.dart
 # Test related files
 coverage/
 environment_config.yaml

@@ -1,5 +1,6 @@
 import 'package:station_center_backend/src/model/station/station.dart';
 
 abstract class StationService {
-  Future<List<Station>>? getStations();
+  Future<List<Station>>? getStationsFromOpenCharge();
+  Future<List<Station>>? getStationsFromMongoDb();
 }
