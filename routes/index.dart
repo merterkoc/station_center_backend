@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:dart_frog/dart_frog.dart';
-import 'package:station_center_backend/service/mongo_db_service.dart';
+import 'package:mongo_pool/mongo_pool.dart';
 
 Future<Response> onRequest(RequestContext context) async {
-  final mongoDbService = MongoDbService().mongoDbPool;
+  final mongoDbService = MongoDbPoolService.getInstance();
   var conn = await mongoDbService.acquire();
   print('Mongo connectio: ${conn.state.toString()}');
   var coll = conn.collection('charge_station');

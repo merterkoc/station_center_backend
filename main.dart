@@ -4,8 +4,8 @@
 import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
+import 'package:mongo_pool/mongo_pool.dart';
 import 'package:station_center_backend/env/env.dart';
-import 'package:station_center_backend/service/mongo_db_service.dart';
 import 'package:station_center_backend/src/schedular/station_schedular.dart';
 
 import 'routes/index.dart' as index;
@@ -21,9 +21,12 @@ Future<HttpServer> createServer() async {
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final handler = Cascade().add(buildRootHandler()).handler;
   print(Env.mongoDbUri);
-  await MongoDbService();
+  try {
+    await MongoDbPoolService(poolSize: 4, mongoDbUri: Env.mongoDbUri);
+  } catch (e) {
+    print(e);
+  }
   StationSchedular().start();
-
   return serve(handler, ip, port);
 }
 

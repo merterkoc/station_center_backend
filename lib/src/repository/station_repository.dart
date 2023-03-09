@@ -1,30 +1,30 @@
+import 'package:mongo_pool/mongo_pool.dart';
 import 'package:open_charge/model/open_charge_model/station/station.dart'
     as openCharge;
 import 'package:open_charge/open_charge.dart';
 import 'package:station_center_backend/env/env.dart';
-import 'package:station_center_backend/service/mongo_db_service.dart';
 import 'package:station_center_backend/src/model/station/station.dart';
 
 class StationRepository {
   final openChargeApi = OpenChargeApi();
-  final mongoDbService = MongoDbService();
+  final mongoDbService = MongoDbPoolService.getInstance();
 
   Future<List<openCharge.Station>?> getStationsFromOpenCharge() =>
       openChargeApi.getStations();
 
   Future<List<Station>>? getStationsFromMongoDb() async {
-    final conn = await mongoDbService.mongoDbPool.acquire();
+    final conn = await mongoDbService.acquire();
     var coll = conn.collection(Env.mongoDbStationCollectionName);
     final result = await coll.find().toList();
-    mongoDbService.mongoDbPool.release(conn);
+    mongoDbService.release(conn);
     return result.map((e) => Station.fromJson(e)).toList();
   }
 
   Future<Station?> getStationByIdFromMongoDb(int id) async {
-    final conn = await mongoDbService.mongoDbPool.acquire();
+    final conn = await mongoDbService.acquire();
     var coll = conn.collection(Env.mongoDbStationCollectionName);
     final result = await coll.findOne({'id': id});
-    mongoDbService.mongoDbPool.release(conn);
+    mongoDbService.release(conn);
     if (result != null) {
       return Station.fromJson(result);
     } else {
@@ -34,7 +34,7 @@ class StationRepository {
 
   Future<void> insertStationListFromOpenCharge(
       List<Station> stationList) async {
-    final conn = await mongoDbService.mongoDbPool.acquire();
+    final conn = await mongoDbService.acquire();
     final mongoStationList = await getStationsFromMongoDb();
     if (mongoStationList != null) {
       stationList.where((element) {
@@ -49,6 +49,6 @@ class StationRepository {
           .collection(Env.mongoDbStationCollectionName)
           .insertAll(stationList.map((e) => e.toJson()).toList());
     }
-    mongoDbService.mongoDbPool.release(conn);
+    mongoDbService.release(conn);
   }
 }
