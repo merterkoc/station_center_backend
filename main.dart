@@ -15,12 +15,11 @@ import 'routes/api/v1/user/info/index.dart' as api_v1_user_info_index;
 
 import 'routes/_middleware.dart' as middleware;
 
-void main() => hotReload(createServer);
-
-Future<HttpServer> createServer() async {
+Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
   final ip = InternetAddress.anyIPv4;
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final handler = Cascade().add(buildRootHandler()).handler;
+
   print(Env.mongoDbUri);
   try {
     await MongoDbPoolService(poolSize: 4, mongoDbUri: Env.mongoDbUri);
