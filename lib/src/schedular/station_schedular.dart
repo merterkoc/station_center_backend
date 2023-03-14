@@ -11,7 +11,7 @@ class StationSchedular {
   StationSchedular();
 
   void start() async {
-    await scheduled(Duration(days: 1), () => getStationsFromOpenCharge(),
+    await scheduled(Duration(hours: 1), () => getStationsFromOpenCharge(),
         repeat: true, immediate: false);
   }
 

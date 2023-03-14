@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:open_charge/config/open_charge_config.dart';
-import 'package:open_charge/env/env.dart';
 import 'package:open_charge/model/open_charge_model/station/station.dart';
 import 'package:open_charge/src/dio/dio_client.dart';
 
@@ -10,7 +9,6 @@ class OpenChargeApi {
   OpenChargeApi();
 
   Future<List<Station>?> getStations() async {
-    print(Env.key);
     final request = await dioClient.get('/v3/poi',
         queryParameters: OpenChargeConfig.OPEN_CHARGE_QUERY_PARAMETERS,
         options: Options(headers: OpenChargeConfig.OPEN_CHARGE_OPTIONS));

@@ -9,7 +9,7 @@ class HttpHeaderInterceptor extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) {
-    options.headers.addAll(OpenChargeConfig.OPEN_CHARGE_HEADER);
+    options.headers.addAll(OpenChargeConfig().OPEN_CHARGE_HEADER);
     handler.next(options);
   }
 }

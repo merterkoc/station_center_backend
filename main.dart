@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
 import 'package:mongo_pool/mongo_pool.dart';
+import 'package:open_charge/config/open_charge_config.dart';
 import 'package:station_center_backend/env/env.dart';
 import 'package:station_center_backend/src/schedular/station_schedular.dart';
 
@@ -15,12 +16,15 @@ import 'routes/api/v1/user/info/index.dart' as api_v1_user_info_index;
 
 import 'routes/_middleware.dart' as middleware;
 
+void main() => run;
+
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
   final ip = InternetAddress.anyIPv4;
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final handler = Cascade().add(buildRootHandler()).handler;
-
-  print(Env.mongoDbUri);
+  OpenChargeConfig().setApiKey(Env.openChargeApiKey);
+  print('Connecting to MongoDB...');
+  print('MongoDB URI: ${Env.mongoDbUri}');
   try {
     await MongoDbPoolService(poolSize: 4, mongoDbUri: Env.mongoDbUri);
   } catch (e) {
