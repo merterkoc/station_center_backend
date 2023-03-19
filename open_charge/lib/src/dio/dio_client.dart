@@ -39,6 +39,9 @@ class DioClient {
         queryParameters: queryParameters,
         options: options,
       );
+      if (response.statusCode == 200) {
+        print('Fetch data from OpenChargeMap API');
+      }
       return _handleResponse(response);
     } catch (e) {
       return _handleError(e);
