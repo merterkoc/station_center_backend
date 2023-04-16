@@ -23,7 +23,7 @@ mixin _$Connector {
   @JsonKey(name: 'type')
   String get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'currentType')
-  String get currentType => throw _privateConstructorUsedError;
+  ConnectorType? get currentType => throw _privateConstructorUsedError;
   @JsonKey(name: 'powerKW')
   num get powerKW => throw _privateConstructorUsedError;
 
@@ -40,7 +40,7 @@ abstract class $ConnectorCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String type,
-      @JsonKey(name: 'currentType') String currentType,
+      @JsonKey(name: 'currentType') ConnectorType? currentType,
       @JsonKey(name: 'powerKW') num powerKW});
 }
 
@@ -58,7 +58,7 @@ class _$ConnectorCopyWithImpl<$Res, $Val extends Connector>
   @override
   $Res call({
     Object? type = null,
-    Object? currentType = null,
+    Object? currentType = freezed,
     Object? powerKW = null,
   }) {
     return _then(_value.copyWith(
@@ -66,10 +66,10 @@ class _$ConnectorCopyWithImpl<$Res, $Val extends Connector>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      currentType: null == currentType
+      currentType: freezed == currentType
           ? _value.currentType
           : currentType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ConnectorType?,
       powerKW: null == powerKW
           ? _value.powerKW
           : powerKW // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$_ConnectorCopyWith<$Res> implements $ConnectorCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String type,
-      @JsonKey(name: 'currentType') String currentType,
+      @JsonKey(name: 'currentType') ConnectorType? currentType,
       @JsonKey(name: 'powerKW') num powerKW});
 }
 
@@ -103,7 +103,7 @@ class __$$_ConnectorCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
-    Object? currentType = null,
+    Object? currentType = freezed,
     Object? powerKW = null,
   }) {
     return _then(_$_Connector(
@@ -111,10 +111,10 @@ class __$$_ConnectorCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      currentType: null == currentType
+      currentType: freezed == currentType
           ? _value.currentType
           : currentType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ConnectorType?,
       powerKW: null == powerKW
           ? _value.powerKW
           : powerKW // ignore: cast_nullable_to_non_nullable
@@ -140,7 +140,7 @@ class _$_Connector implements _Connector {
   final String type;
   @override
   @JsonKey(name: 'currentType')
-  final String currentType;
+  final ConnectorType? currentType;
   @override
   @JsonKey(name: 'powerKW')
   final num powerKW;
@@ -182,7 +182,7 @@ class _$_Connector implements _Connector {
 abstract class _Connector implements Connector {
   factory _Connector(
       {@JsonKey(name: 'type') required final String type,
-      @JsonKey(name: 'currentType') required final String currentType,
+      @JsonKey(name: 'currentType') required final ConnectorType? currentType,
       @JsonKey(name: 'powerKW') required final num powerKW}) = _$_Connector;
 
   factory _Connector.fromJson(Map<String, dynamic> json) =
@@ -193,7 +193,7 @@ abstract class _Connector implements Connector {
   String get type;
   @override
   @JsonKey(name: 'currentType')
-  String get currentType;
+  ConnectorType? get currentType;
   @override
   @JsonKey(name: 'powerKW')
   num get powerKW;

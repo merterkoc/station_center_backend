@@ -16,19 +16,16 @@ import 'routes/api/v1/user/info/index.dart' as api_v1_user_info_index;
 
 import 'routes/_middleware.dart' as middleware;
 
-void main() => run;
-
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
   final ip = InternetAddress.anyIPv4;
-  final port = int.parse(Platform.environment['PORT'] ?? '8080');
+  final port = int.parse(Platform.environment['PORT'] ?? '8081');
   final handler = Cascade().add(buildRootHandler()).handler;
   OpenChargeConfig().setApiKey(Env.openChargeApiKey);
-  print('Connecting to MongoDB...');
-  print('MongoDB URI: ${Env.mongoDbUri}');
   try {
+    print('Connecting to MongoDB...');
     await MongoDbPoolService(poolSize: 4, mongoDbUri: Env.mongoDbUri);
   } catch (e) {
-    print(e);
+    print('MongoDB connection failed: $e');
   }
   StationSchedular().start();
   print('Server started on port $port');

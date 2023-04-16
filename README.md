@@ -15,6 +15,9 @@
     7. Run `dart run bin/main.dart` to start the server
     8. Open `http://localhost:8080` in your browser
 
+# Notes
+If you use m1 change platform to arm64 in copilot/manifest.yaml before deploying to AWS
+
 
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 

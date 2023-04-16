@@ -3,7 +3,6 @@ import 'package:station_center_backend/src/api/controller/station_controller.dar
 import 'package:station_center_backend/src/utils/scheduled.dart';
 
 class StationSchedular {
-  ///
   final mongoDbPool = MongoDbPoolService.getInstance();
 
   final stationController = StationController();
