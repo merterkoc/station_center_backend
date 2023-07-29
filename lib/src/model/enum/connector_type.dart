@@ -1,13 +1,13 @@
 enum ConnectorType {
-  AC,
-  DC;
+  ac,
+  dc;
 
-  static fromString(String? type) {
+  static ConnectorType? fromString(String? type) {
     if (type == null) return null;
     return type.contains('AC')
-        ? ConnectorType.AC
+        ? ConnectorType.ac
         : type.contains('DC')
-            ? ConnectorType.DC
+            ? ConnectorType.dc
             : null;
   }
 }

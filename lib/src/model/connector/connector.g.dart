@@ -21,6 +21,6 @@ Map<String, dynamic> _$$_ConnectorToJson(_$_Connector instance) =>
     };
 
 const _$ConnectorTypeEnumMap = {
-  ConnectorType.AC: 'AC',
-  ConnectorType.DC: 'DC',
+  ConnectorType.ac: 'AC',
+  ConnectorType.dc: 'DC',
 };

@@ -1,11 +1,10 @@
 import 'package:open_charge/model/open_charge_model/station/station.dart';
+import 'package:station_center_backend/src/mapper/mapper.dart';
 import 'package:station_center_backend/src/model/address_info/address_info.dart';
 import 'package:station_center_backend/src/model/connector/connector.dart';
 import 'package:station_center_backend/src/model/enum/connector_type.dart';
 import 'package:station_center_backend/src/model/operator_info/operator_info.dart';
 import 'package:station_center_backend/src/model/station/station.dart' as sc;
-
-import 'mapper.dart';
 
 class StationMapper implements Mapper<Station, sc.Station> {
   @override
@@ -39,11 +38,13 @@ class StationMapper implements Mapper<Station, sc.Station> {
         isPrivateIndividual: object.operatorInfo?.isPrivateIndividual ?? false,
       ),
       connector: object.connections
-          ?.map((e) => Connector(
-                type: e.connectionType?.title ?? '',
-                currentType: ConnectorType.fromString(e.currentType?.title),
-                powerKW: e.powerKW ?? 0,
-              ))
+          ?.map(
+            (e) => Connector(
+              type: e.connectionType?.title ?? '',
+              currentType: ConnectorType.fromString(e.currentType?.title),
+              powerKW: e.powerKW ?? 0,
+            ),
+          )
           .toList(),
     );
   }
