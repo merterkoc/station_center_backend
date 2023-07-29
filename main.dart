@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
@@ -12,12 +14,12 @@ Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
   final port = int.parse(Platform.environment['PORT'] ?? '8082');
   OpenChargeConfig().setApiKey(env.openChargeApiKey!);
   try {
-    print('Connecting to MongoDB...');
-    await MongoDbPoolService(poolSize: 4, mongoDbUri: env.mongoDbUri!);
+    log('Connecting to MongoDB...');
+    MongoDbPoolService(poolSize: 4, mongoDbUri: env.mongoDbUri!);
   } catch (e) {
-    print('MongoDB connection failed: $e');
+    log('MongoDB connection failed: $e');
   }
-  StationSchedular().start();
-  print('Server started on port $port');
+  unawaited(StationSchedular().start());
+  log('Server started on port $port');
   return serve(handler, ip, port);
 }

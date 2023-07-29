@@ -9,15 +9,17 @@ Future<Response> onRequest(RequestContext context, String id) async {
       await StationController().getStationByIdFromMongoDb(int.parse(id));
   if (station == null) {
     return Response(
-        statusCode: HttpStatus.notFound,
-        body: 'Station not found!',
-        encoding: Encoding.getByName('utf-8'));
+      statusCode: HttpStatus.notFound,
+      body: 'Station not found!',
+      encoding: Encoding.getByName('utf-8'),
+    );
   } else {
     return Response(
-        body: jsonEncode(station),
-        headers: {
-          HttpHeaders.contentTypeHeader: ContentType.json.value,
-        },
-        encoding: Encoding.getByName('utf-8'));
+      body: jsonEncode(station),
+      headers: {
+        HttpHeaders.contentTypeHeader: ContentType.json.value,
+      },
+      encoding: Encoding.getByName('utf-8'),
+    );
   }
 }
