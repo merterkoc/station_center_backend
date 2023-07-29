@@ -1,6 +1,11 @@
+import 'dart:io';
+
 import 'package:dart_frog/dart_frog.dart';
 
 Handler middleware(Handler handler) {
+  Platform.environment.forEach((key, value) {
+    print('$key: $value');
+  });
   return (context) async {
     // Execute code before request is handled.
     print('Request: ${context.request.method} ${context.request.uri}');
