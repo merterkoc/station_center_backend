@@ -15,7 +15,13 @@ Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
   OpenChargeConfig().setApiKey(env.openChargeApiKey!);
   try {
     log('Connecting to MongoDB...');
-    MongoDbPoolService(poolSize: 4, mongoDbUri: env.mongoDbUri!);
+    MongoDbPoolService(
+      MongoPoolConfiguration(
+        poolSize: 2,
+        uriString: env.mongoDbUri!,
+        maxLifetimeMilliseconds: 10000,
+      ),
+    );
   } catch (e) {
     log('MongoDB connection failed: $e');
   }
