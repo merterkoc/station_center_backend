@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:open_charge/config/open_charge_config.dart';
+import 'package:station_center_backend/module/open_charge/lib/config/open_charge_config.dart';
 
 /// [HttpHeaderInterceptor] is used to send default http headers during
 /// network request.

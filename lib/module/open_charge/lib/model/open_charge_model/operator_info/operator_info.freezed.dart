@@ -355,28 +355,18 @@ class _$_OperatorInfo implements _OperatorInfo {
 
 abstract class _OperatorInfo implements OperatorInfo {
   factory _OperatorInfo(
-      {@JsonKey(name: 'WebsiteURL')
-          final String? websiteURL,
-      @JsonKey(name: 'PhonePrimaryContact')
-          final String? phonePrimaryContact,
+      {@JsonKey(name: 'WebsiteURL') final String? websiteURL,
+      @JsonKey(name: 'PhonePrimaryContact') final String? phonePrimaryContact,
       @JsonKey(name: 'PhoneSecondaryContact')
-          final String? phoneSecondaryContact,
-      @JsonKey(name: 'IsPrivateIndividual')
-          final bool? isPrivateIndividual,
-      @JsonKey(name: 'AddressInfo')
-          final String? addressInfo,
-      @JsonKey(name: 'BookingURL')
-          final String? bookingURL,
-      @JsonKey(name: 'ContactEmail')
-          final String? contactEmail,
-      @JsonKey(name: 'FaultReportEmail')
-          final String? faultReportEmail,
-      @JsonKey(name: 'IsRestrictedEdit')
-          final bool? isRestrictedEdit,
-      @JsonKey(name: 'ID')
-          final int? iD,
-      @JsonKey(name: 'Title')
-          final String? title}) = _$_OperatorInfo;
+      final String? phoneSecondaryContact,
+      @JsonKey(name: 'IsPrivateIndividual') final bool? isPrivateIndividual,
+      @JsonKey(name: 'AddressInfo') final String? addressInfo,
+      @JsonKey(name: 'BookingURL') final String? bookingURL,
+      @JsonKey(name: 'ContactEmail') final String? contactEmail,
+      @JsonKey(name: 'FaultReportEmail') final String? faultReportEmail,
+      @JsonKey(name: 'IsRestrictedEdit') final bool? isRestrictedEdit,
+      @JsonKey(name: 'ID') final int? iD,
+      @JsonKey(name: 'Title') final String? title}) = _$_OperatorInfo;
 
   factory _OperatorInfo.fromJson(Map<String, dynamic> json) =
       _$_OperatorInfo.fromJson;

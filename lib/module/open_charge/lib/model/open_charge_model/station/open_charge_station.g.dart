@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'station.dart';
+part of 'open_charge_station.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Station _$$_StationFromJson(Map<String, dynamic> json) => _$_Station(
+_$_OpenChargeStation _$$_OpenChargeStationFromJson(Map<String, dynamic> json) =>
+    _$_OpenChargeStation(
       dataProvider: json['DataProvider'] == null
           ? null
           : DataProvider.fromJson(json['DataProvider'] as Map<String, dynamic>),
@@ -52,7 +53,8 @@ _$_Station _$$_StationFromJson(Map<String, dynamic> json) => _$_Station(
       submissionStatusTypeID: json['SubmissionStatusTypeID'] as int?,
     );
 
-Map<String, dynamic> _$$_StationToJson(_$_Station instance) =>
+Map<String, dynamic> _$$_OpenChargeStationToJson(
+        _$_OpenChargeStation instance) =>
     <String, dynamic>{
       'DataProvider': instance.dataProvider?.toJson(),
       'OperatorInfo': instance.operatorInfo?.toJson(),

@@ -1,4 +1,4 @@
-import 'package:open_charge/model/open_charge_model/station/station.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/station/open_charge_station.dart';
 import 'package:station_center_backend/src/mapper/mapper.dart';
 import 'package:station_center_backend/src/model/address_info/address_info.dart';
 import 'package:station_center_backend/src/model/connector/connector.dart';
@@ -6,9 +6,9 @@ import 'package:station_center_backend/src/model/enum/connector_type.dart';
 import 'package:station_center_backend/src/model/operator_info/operator_info.dart';
 import 'package:station_center_backend/src/model/station/station.dart' as sc;
 
-class StationMapper implements Mapper<Station, sc.Station> {
+class StationMapper implements Mapper<OpenChargeStation, sc.Station> {
   @override
-  sc.Station call(Station object) {
+  sc.Station call(OpenChargeStation object) {
     return sc.Station(
       name: object.addressInfo?.title,
       id: object.iD,

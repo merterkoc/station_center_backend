@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:open_charge/model/open_charge_model/connection_type/connection_type.dart';
-import 'package:open_charge/model/open_charge_model/current_type/current_type.dart';
-import 'package:open_charge/model/open_charge_model/level/level.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/connection_type/connection_type.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/current_type/current_type.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/level/level.dart';
 
 part 'connections.freezed.dart';
 

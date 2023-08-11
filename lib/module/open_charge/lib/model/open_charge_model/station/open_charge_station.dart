@@ -1,21 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:open_charge/model/open_charge_model/address_info/address_info.dart';
-import 'package:open_charge/model/open_charge_model/connections/connections.dart';
-import 'package:open_charge/model/open_charge_model/data_provider/data_provider.dart';
-import 'package:open_charge/model/open_charge_model/media_items/media_items.dart';
-import 'package:open_charge/model/open_charge_model/operator_info/operator_info.dart';
-import 'package:open_charge/model/open_charge_model/status_type/status_type.dart';
-import 'package:open_charge/model/open_charge_model/submission_status/submission_status.dart';
-import 'package:open_charge/model/open_charge_model/usage_type/usage_type.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/address_info/address_info.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/connections/connections.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/data_provider/data_provider.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/media_items/media_items.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/operator_info/operator_info.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/status_type/status_type.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/submission_status/submission_status.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/usage_type/usage_type.dart';
+part 'open_charge_station.freezed.dart';
 
-part 'station.freezed.dart';
-
-part 'station.g.dart';
+part 'open_charge_station.g.dart';
 
 @freezed
-class Station with _$Station {
+class OpenChargeStation with _$OpenChargeStation {
   @JsonSerializable(explicitToJson: true, createToJson: true)
-  factory Station({
+  factory OpenChargeStation({
     @JsonKey(name: 'DataProvider') final DataProvider? dataProvider,
     @JsonKey(name: 'OperatorInfo') final OperatorInfo? operatorInfo,
     @JsonKey(name: 'UsageType') final UsageType? usageType,
@@ -42,8 +41,8 @@ class Station with _$Station {
     @JsonKey(name: 'DataQualityLevel') final int? dataQualityLevel,
     @JsonKey(name: 'DateCreated') final String? dateCreated,
     @JsonKey(name: 'SubmissionStatusTypeID') final int? submissionStatusTypeID,
-  }) = _Station;
+  }) = _OpenChargeStation;
 
-  factory Station.fromJson(Map<String, Object?> json) =>
-      _$StationFromJson(json);
+  factory OpenChargeStation.fromJson(Map<String, Object?> json) =>
+      _$OpenChargeStationFromJson(json);
 }

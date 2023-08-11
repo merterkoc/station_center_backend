@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:open_charge/model/open_charge_model/country/country.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/country/country.dart';
 
 part 'address_info.freezed.dart';
 

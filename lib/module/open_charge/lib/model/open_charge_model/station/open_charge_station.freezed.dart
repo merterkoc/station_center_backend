@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'station.dart';
+part of 'open_charge_station.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Station _$StationFromJson(Map<String, dynamic> json) {
-  return _Station.fromJson(json);
+OpenChargeStation _$OpenChargeStationFromJson(Map<String, dynamic> json) {
+  return _OpenChargeStation.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Station {
+mixin _$OpenChargeStation {
   @JsonKey(name: 'DataProvider')
   DataProvider? get dataProvider => throw _privateConstructorUsedError;
   @JsonKey(name: 'OperatorInfo')
@@ -73,13 +73,15 @@ mixin _$Station {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StationCopyWith<Station> get copyWith => throw _privateConstructorUsedError;
+  $OpenChargeStationCopyWith<OpenChargeStation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StationCopyWith<$Res> {
-  factory $StationCopyWith(Station value, $Res Function(Station) then) =
-      _$StationCopyWithImpl<$Res, Station>;
+abstract class $OpenChargeStationCopyWith<$Res> {
+  factory $OpenChargeStationCopyWith(
+          OpenChargeStation value, $Res Function(OpenChargeStation) then) =
+      _$OpenChargeStationCopyWithImpl<$Res, OpenChargeStation>;
   @useResult
   $Res call(
       {@JsonKey(name: 'DataProvider') DataProvider? dataProvider,
@@ -117,9 +119,9 @@ abstract class $StationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StationCopyWithImpl<$Res, $Val extends Station>
-    implements $StationCopyWith<$Res> {
-  _$StationCopyWithImpl(this._value, this._then);
+class _$OpenChargeStationCopyWithImpl<$Res, $Val extends OpenChargeStation>
+    implements $OpenChargeStationCopyWith<$Res> {
+  _$OpenChargeStationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -333,10 +335,11 @@ class _$StationCopyWithImpl<$Res, $Val extends Station>
 }
 
 /// @nodoc
-abstract class _$$_StationCopyWith<$Res> implements $StationCopyWith<$Res> {
-  factory _$$_StationCopyWith(
-          _$_Station value, $Res Function(_$_Station) then) =
-      __$$_StationCopyWithImpl<$Res>;
+abstract class _$$_OpenChargeStationCopyWith<$Res>
+    implements $OpenChargeStationCopyWith<$Res> {
+  factory _$$_OpenChargeStationCopyWith(_$_OpenChargeStation value,
+          $Res Function(_$_OpenChargeStation) then) =
+      __$$_OpenChargeStationCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -381,10 +384,11 @@ abstract class _$$_StationCopyWith<$Res> implements $StationCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_StationCopyWithImpl<$Res>
-    extends _$StationCopyWithImpl<$Res, _$_Station>
-    implements _$$_StationCopyWith<$Res> {
-  __$$_StationCopyWithImpl(_$_Station _value, $Res Function(_$_Station) _then)
+class __$$_OpenChargeStationCopyWithImpl<$Res>
+    extends _$OpenChargeStationCopyWithImpl<$Res, _$_OpenChargeStation>
+    implements _$$_OpenChargeStationCopyWith<$Res> {
+  __$$_OpenChargeStationCopyWithImpl(
+      _$_OpenChargeStation _value, $Res Function(_$_OpenChargeStation) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -416,7 +420,7 @@ class __$$_StationCopyWithImpl<$Res>
     Object? dateCreated = freezed,
     Object? submissionStatusTypeID = freezed,
   }) {
-    return _then(_$_Station(
+    return _then(_$_OpenChargeStation(
       dataProvider: freezed == dataProvider
           ? _value.dataProvider
           : dataProvider // ignore: cast_nullable_to_non_nullable
@@ -524,8 +528,8 @@ class __$$_StationCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true, createToJson: true)
-class _$_Station implements _Station {
-  _$_Station(
+class _$_OpenChargeStation implements _OpenChargeStation {
+  _$_OpenChargeStation(
       {@JsonKey(name: 'DataProvider') this.dataProvider,
       @JsonKey(name: 'OperatorInfo') this.operatorInfo,
       @JsonKey(name: 'UsageType') this.usageType,
@@ -554,8 +558,8 @@ class _$_Station implements _Station {
       : _mediaItems = mediaItems,
         _connections = connections;
 
-  factory _$_Station.fromJson(Map<String, dynamic> json) =>
-      _$$_StationFromJson(json);
+  factory _$_OpenChargeStation.fromJson(Map<String, dynamic> json) =>
+      _$$_OpenChargeStationFromJson(json);
 
   @override
   @JsonKey(name: 'DataProvider')
@@ -651,14 +655,14 @@ class _$_Station implements _Station {
 
   @override
   String toString() {
-    return 'Station(dataProvider: $dataProvider, operatorInfo: $operatorInfo, usageType: $usageType, statusType: $statusType, submissionStatus: $submissionStatus, percentageSimilarity: $percentageSimilarity, mediaItems: $mediaItems, isMemberShipRequired: $isMemberShipRequired, dateLastVerified: $dateLastVerified, iD: $iD, uUID: $uUID, dataProviderID: $dataProviderID, dataProvidersReference: $dataProvidersReference, operatorID: $operatorID, usageTypeID: $usageTypeID, usageCost: $usageCost, addressInfo: $addressInfo, connections: $connections, numberOfPoints: $numberOfPoints, datePlanned: $datePlanned, statusTypeID: $statusTypeID, dateLastStatusUpdate: $dateLastStatusUpdate, dataQualityLevel: $dataQualityLevel, dateCreated: $dateCreated, submissionStatusTypeID: $submissionStatusTypeID)';
+    return 'OpenChargeStation(dataProvider: $dataProvider, operatorInfo: $operatorInfo, usageType: $usageType, statusType: $statusType, submissionStatus: $submissionStatus, percentageSimilarity: $percentageSimilarity, mediaItems: $mediaItems, isMemberShipRequired: $isMemberShipRequired, dateLastVerified: $dateLastVerified, iD: $iD, uUID: $uUID, dataProviderID: $dataProviderID, dataProvidersReference: $dataProvidersReference, operatorID: $operatorID, usageTypeID: $usageTypeID, usageCost: $usageCost, addressInfo: $addressInfo, connections: $connections, numberOfPoints: $numberOfPoints, datePlanned: $datePlanned, statusTypeID: $statusTypeID, dateLastStatusUpdate: $dateLastStatusUpdate, dataQualityLevel: $dataQualityLevel, dateCreated: $dateCreated, submissionStatusTypeID: $submissionStatusTypeID)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Station &&
+            other is _$_OpenChargeStation &&
             (identical(other.dataProvider, dataProvider) ||
                 other.dataProvider == dataProvider) &&
             (identical(other.operatorInfo, operatorInfo) ||
@@ -743,71 +747,51 @@ class _$_Station implements _Station {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StationCopyWith<_$_Station> get copyWith =>
-      __$$_StationCopyWithImpl<_$_Station>(this, _$identity);
+  _$$_OpenChargeStationCopyWith<_$_OpenChargeStation> get copyWith =>
+      __$$_OpenChargeStationCopyWithImpl<_$_OpenChargeStation>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StationToJson(
+    return _$$_OpenChargeStationToJson(
       this,
     );
   }
 }
 
-abstract class _Station implements Station {
-  factory _Station(
-      {@JsonKey(name: 'DataProvider')
-          final DataProvider? dataProvider,
-      @JsonKey(name: 'OperatorInfo')
-          final OperatorInfo? operatorInfo,
-      @JsonKey(name: 'UsageType')
-          final UsageType? usageType,
-      @JsonKey(name: 'StatusType')
-          final StatusType? statusType,
+abstract class _OpenChargeStation implements OpenChargeStation {
+  factory _OpenChargeStation(
+      {@JsonKey(name: 'DataProvider') final DataProvider? dataProvider,
+      @JsonKey(name: 'OperatorInfo') final OperatorInfo? operatorInfo,
+      @JsonKey(name: 'UsageType') final UsageType? usageType,
+      @JsonKey(name: 'StatusType') final StatusType? statusType,
       @JsonKey(name: 'SubmissionStatus')
-          final SubmissionStatus? submissionStatus,
-      @JsonKey(name: 'PercentageSimilarity')
-          final String? percentageSimilarity,
-      @JsonKey(name: 'MediaItems')
-          final List<MediaItems?>? mediaItems,
-      @JsonKey(name: 'IsMemberShipRequired')
-          final bool? isMemberShipRequired,
-      @JsonKey(name: 'DateLastVerified')
-          final String? dateLastVerified,
-      @JsonKey(name: 'ID')
-          final int? iD,
-      @JsonKey(name: 'UUID')
-          final String? uUID,
-      @JsonKey(name: 'DataProviderID')
-          final int? dataProviderID,
+      final SubmissionStatus? submissionStatus,
+      @JsonKey(name: 'PercentageSimilarity') final String? percentageSimilarity,
+      @JsonKey(name: 'MediaItems') final List<MediaItems?>? mediaItems,
+      @JsonKey(name: 'IsMemberShipRequired') final bool? isMemberShipRequired,
+      @JsonKey(name: 'DateLastVerified') final String? dateLastVerified,
+      @JsonKey(name: 'ID') final int? iD,
+      @JsonKey(name: 'UUID') final String? uUID,
+      @JsonKey(name: 'DataProviderID') final int? dataProviderID,
       @JsonKey(name: 'DataProvidersReference')
-          final String? dataProvidersReference,
-      @JsonKey(name: 'OperatorID')
-          final int? operatorID,
-      @JsonKey(name: 'UsageTypeID')
-          final int? usageTypeID,
-      @JsonKey(name: 'UsageCost')
-          final String? usageCost,
-      @JsonKey(name: 'AddressInfo')
-          final AddressInfo? addressInfo,
-      @JsonKey(name: 'Connections')
-          final List<Connections>? connections,
-      @JsonKey(name: 'NumberOfPoints')
-          final int? numberOfPoints,
-      @JsonKey(name: 'DatePlanned')
-          final String? datePlanned,
-      @JsonKey(name: 'StatusTypeID')
-          final int? statusTypeID,
-      @JsonKey(name: 'DateLastStatusUpdate')
-          final String? dateLastStatusUpdate,
-      @JsonKey(name: 'DataQualityLevel')
-          final int? dataQualityLevel,
-      @JsonKey(name: 'DateCreated')
-          final String? dateCreated,
+      final String? dataProvidersReference,
+      @JsonKey(name: 'OperatorID') final int? operatorID,
+      @JsonKey(name: 'UsageTypeID') final int? usageTypeID,
+      @JsonKey(name: 'UsageCost') final String? usageCost,
+      @JsonKey(name: 'AddressInfo') final AddressInfo? addressInfo,
+      @JsonKey(name: 'Connections') final List<Connections>? connections,
+      @JsonKey(name: 'NumberOfPoints') final int? numberOfPoints,
+      @JsonKey(name: 'DatePlanned') final String? datePlanned,
+      @JsonKey(name: 'StatusTypeID') final int? statusTypeID,
+      @JsonKey(name: 'DateLastStatusUpdate') final String? dateLastStatusUpdate,
+      @JsonKey(name: 'DataQualityLevel') final int? dataQualityLevel,
+      @JsonKey(name: 'DateCreated') final String? dateCreated,
       @JsonKey(name: 'SubmissionStatusTypeID')
-          final int? submissionStatusTypeID}) = _$_Station;
+      final int? submissionStatusTypeID}) = _$_OpenChargeStation;
 
-  factory _Station.fromJson(Map<String, dynamic> json) = _$_Station.fromJson;
+  factory _OpenChargeStation.fromJson(Map<String, dynamic> json) =
+      _$_OpenChargeStation.fromJson;
 
   @override
   @JsonKey(name: 'DataProvider')
@@ -886,6 +870,6 @@ abstract class _Station implements Station {
   int? get submissionStatusTypeID;
   @override
   @JsonKey(ignore: true)
-  _$$_StationCopyWith<_$_Station> get copyWith =>
+  _$$_OpenChargeStationCopyWith<_$_OpenChargeStation> get copyWith =>
       throw _privateConstructorUsedError;
 }

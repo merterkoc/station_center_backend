@@ -51,22 +51,15 @@ abstract class $DataProviderCopyWith<$Res> {
       _$DataProviderCopyWithImpl<$Res, DataProvider>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'WebsiteURL')
-          String? websiteURL,
+      {@JsonKey(name: 'WebsiteURL') String? websiteURL,
       @JsonKey(name: 'DataProviderStatusType')
-          DataProviderStatusType? dataProviderStatusType,
-      @JsonKey(name: 'isRestrictedEdit')
-          bool? isRestrictedEdit,
-      @JsonKey(name: 'IsOpenDataLicensed')
-          bool? isOpenDataLicensed,
-      @JsonKey(name: 'IsApprovedImport')
-          bool? isApprovedImport,
-      @JsonKey(name: 'License')
-          String? license,
-      @JsonKey(name: 'ID')
-          int? iD,
-      @JsonKey(name: 'Title')
-          String? title});
+      DataProviderStatusType? dataProviderStatusType,
+      @JsonKey(name: 'isRestrictedEdit') bool? isRestrictedEdit,
+      @JsonKey(name: 'IsOpenDataLicensed') bool? isOpenDataLicensed,
+      @JsonKey(name: 'IsApprovedImport') bool? isApprovedImport,
+      @JsonKey(name: 'License') String? license,
+      @JsonKey(name: 'ID') int? iD,
+      @JsonKey(name: 'Title') String? title});
 
   $DataProviderStatusTypeCopyWith<$Res>? get dataProviderStatusType;
 }
@@ -152,22 +145,15 @@ abstract class _$$_DataProviderCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'WebsiteURL')
-          String? websiteURL,
+      {@JsonKey(name: 'WebsiteURL') String? websiteURL,
       @JsonKey(name: 'DataProviderStatusType')
-          DataProviderStatusType? dataProviderStatusType,
-      @JsonKey(name: 'isRestrictedEdit')
-          bool? isRestrictedEdit,
-      @JsonKey(name: 'IsOpenDataLicensed')
-          bool? isOpenDataLicensed,
-      @JsonKey(name: 'IsApprovedImport')
-          bool? isApprovedImport,
-      @JsonKey(name: 'License')
-          String? license,
-      @JsonKey(name: 'ID')
-          int? iD,
-      @JsonKey(name: 'Title')
-          String? title});
+      DataProviderStatusType? dataProviderStatusType,
+      @JsonKey(name: 'isRestrictedEdit') bool? isRestrictedEdit,
+      @JsonKey(name: 'IsOpenDataLicensed') bool? isOpenDataLicensed,
+      @JsonKey(name: 'IsApprovedImport') bool? isApprovedImport,
+      @JsonKey(name: 'License') String? license,
+      @JsonKey(name: 'ID') int? iD,
+      @JsonKey(name: 'Title') String? title});
 
   @override
   $DataProviderStatusTypeCopyWith<$Res>? get dataProviderStatusType;
@@ -326,22 +312,15 @@ class _$_DataProvider implements _DataProvider {
 
 abstract class _DataProvider implements DataProvider {
   factory _DataProvider(
-      {@JsonKey(name: 'WebsiteURL')
-          final String? websiteURL,
+      {@JsonKey(name: 'WebsiteURL') final String? websiteURL,
       @JsonKey(name: 'DataProviderStatusType')
-          final DataProviderStatusType? dataProviderStatusType,
-      @JsonKey(name: 'isRestrictedEdit')
-          final bool? isRestrictedEdit,
-      @JsonKey(name: 'IsOpenDataLicensed')
-          final bool? isOpenDataLicensed,
-      @JsonKey(name: 'IsApprovedImport')
-          final bool? isApprovedImport,
-      @JsonKey(name: 'License')
-          final String? license,
-      @JsonKey(name: 'ID')
-          final int? iD,
-      @JsonKey(name: 'Title')
-          final String? title}) = _$_DataProvider;
+      final DataProviderStatusType? dataProviderStatusType,
+      @JsonKey(name: 'isRestrictedEdit') final bool? isRestrictedEdit,
+      @JsonKey(name: 'IsOpenDataLicensed') final bool? isOpenDataLicensed,
+      @JsonKey(name: 'IsApprovedImport') final bool? isApprovedImport,
+      @JsonKey(name: 'License') final String? license,
+      @JsonKey(name: 'ID') final int? iD,
+      @JsonKey(name: 'Title') final String? title}) = _$_DataProvider;
 
   factory _DataProvider.fromJson(Map<String, dynamic> json) =
       _$_DataProvider.fromJson;

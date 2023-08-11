@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:mongo_pool/mongo_pool.dart';
-import 'package:open_charge/model/open_charge_model/station/station.dart'
-    as opencharge;
-import 'package:open_charge/open_charge.dart';
-import 'package:station_center_backend/env/env.dart';
+import 'package:station_center_backend/environment/environment_service.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/station/open_charge_station.dart';
+import 'package:station_center_backend/module/open_charge/lib/open_charge.dart';
 import 'package:station_center_backend/src/model/station/station.dart';
 import 'package:station_center_backend/src/repository/base_repository.dart';
 
@@ -12,7 +11,7 @@ class StationRepository extends BaseRepository {
   final openChargeApi = OpenChargeApi();
   final mongoDbService = MongoDbPoolService.getInstance();
 
-  Future<List<opencharge.Station>?> getStationsFromOpenCharge() =>
+  Future<List<OpenChargeStation>?> getStationsFromOpenCharge() =>
       openChargeApi.getStations();
 
   Future<List<Station>>? getStationsFromMongoDb() async {
@@ -50,7 +49,7 @@ class StationRepository extends BaseRepository {
       });
     } else {
       await conn
-          .collection(Env.mongoDbStationCollectionName)
+          .collection(EnvironmentService().mongoDbStationCollectionName)
           .insertAll(stationList.map((e) => e.toJson()).toList());
     }
     await mongoDbService.release(conn);

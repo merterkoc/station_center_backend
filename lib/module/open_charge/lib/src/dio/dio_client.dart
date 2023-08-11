@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:open_charge/config/open_charge_config.dart';
-import 'package:open_charge/src/dio/header_interceptor.dart';
-import 'package:open_charge/src/dio/response_entity.dart';
+import 'package:station_center_backend/module/open_charge/lib/config/open_charge_config.dart';
+import 'package:station_center_backend/module/open_charge/lib/src/dio/header_interceptor.dart';
+import 'package:station_center_backend/module/open_charge/lib/src/dio/response_entity.dart';
 
 class DioClient {
   /// factory method
@@ -141,7 +141,7 @@ class DioClient {
   Future<ResponseEntity<T>> _handleError<T>(
     dynamic e,
   ) {
-    final error = e as DioError;
+    final error = e as DioException;
     return Future.value(
       ResponseEntity<T>(
         success: false,

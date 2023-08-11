@@ -18,11 +18,11 @@ class EnvironmentService {
     return _env['mongo_db_uri'];
   }
 
-  String? get mongoDbStationCollectionName {
+  String get mongoDbStationCollectionName {
     if (_env['mongo_station_collection_name'] == null) {
       throw Exception('MONGO_STATION_COLLECTION_NAME is not set');
     }
-    return _env['mongo_station_collection_name'];
+    return _env['mongo_station_collection_name']!;
   }
 
   String? get openChargeApiKey {

@@ -1,4 +1,4 @@
-import 'package:open_charge/model/open_charge_model/station/station.dart';
+import 'package:station_center_backend/module/open_charge/lib/model/open_charge_model/station/open_charge_station.dart';
 import 'package:station_center_backend/src/mapper/station_mapper.dart';
 import 'package:station_center_backend/src/model/station/station.dart' as my;
 import 'package:station_center_backend/src/repository/station_repository.dart';
@@ -9,7 +9,7 @@ class StationController implements StationService {
 
   @override
   Future<List<my.Station>> getStationsFromOpenCharge() async {
-    List<Station>? stationResponse =
+    List<OpenChargeStation>? stationResponse =
         await _stationRepository.getStationsFromOpenCharge() ?? [];
     List<my.Station> station = [];
     stationResponse.forEach((element) {
