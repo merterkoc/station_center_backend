@@ -6,12 +6,11 @@ import 'package:dart_frog/dart_frog.dart';
 import 'package:mongo_pool/mongo_pool.dart';
 import 'package:station_center_backend/environment/environment_service.dart';
 import 'package:station_center_backend/module/open_charge/lib/config/open_charge_config.dart';
-import 'package:station_center_backend/src/schedular/station_schedular.dart';
 
 Future<HttpServer> run(Handler handler, InternetAddress ip, int port) async {
   final env = EnvironmentService();
   final ip = InternetAddress.anyIPv4;
-  final port = int.parse(Platform.environment['PORT'] ?? '8082');
+  final port = int.tryParse(Platform.environment['PORT'] ?? '8080') ?? 8080;
   OpenChargeConfig().setApiKey(env.openChargeApiKey!);
   try {
     log('Connecting to MongoDB...');
