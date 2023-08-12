@@ -9,15 +9,15 @@ part 'data_provider.g.dart';
 class DataProvider with _$DataProvider {
   @JsonSerializable(explicitToJson: true, createToJson: true)
   factory DataProvider({
-    @JsonKey(name: 'WebsiteURL')final   String? websiteURL,
-    @JsonKey(name: 'DataProviderStatusType')  final DataProviderStatusType? dataProviderStatusType,
-    @JsonKey(name: 'isRestrictedEdit')  final bool? isRestrictedEdit,
-    @JsonKey(name: 'IsOpenDataLicensed')  final bool? isOpenDataLicensed,
-    @JsonKey(name: 'IsApprovedImport')  final bool? isApprovedImport,
-    @JsonKey(name: 'License')  final String? license,
-    @JsonKey(name: 'ID')  final int? iD,
-    @JsonKey(name: 'Title')  final String? title,
-
+    @JsonKey(name: 'WebsiteURL') final String? websiteURL,
+    @JsonKey(name: 'DataProviderStatusType')
+    final DataProviderStatusType? dataProviderStatusType,
+    @JsonKey(name: 'isRestrictedEdit') final bool? isRestrictedEdit,
+    @JsonKey(name: 'IsOpenDataLicensed') final bool? isOpenDataLicensed,
+    @JsonKey(name: 'IsApprovedImport') final bool? isApprovedImport,
+    @JsonKey(name: 'License') final String? license,
+    @JsonKey(name: 'ID') final int? iD,
+    @JsonKey(name: 'Title') final String? title,
   }) = _DataProvider;
 
   factory DataProvider.fromJson(Map<String, Object?> json) =>
