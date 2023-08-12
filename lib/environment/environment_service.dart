@@ -12,24 +12,24 @@ class EnvironmentService {
   static final EnvironmentService _singleton = EnvironmentService._internal();
 
   String? get mongoDbUri {
-    if (_env['mongo_db_uri'] == null) {
+    if (_env['MONGO_DB_URI'] == null) {
       throw Exception('MONGO_DB_URI is not set');
     }
-    return _env['mongo_db_uri'];
+    return _env['MONGO_DB_URI'];
   }
 
   String get mongoDbStationCollectionName {
-    if (_env['mongo_station_collection_name'] == null) {
-      throw Exception('MONGO_STATION_COLLECTION_NAME is not set');
+    if (_env['MONGO_STATION_COLLECTION'] == null) {
+      throw Exception('MONGO_STATION_COLLECTION is not set');
     }
-    return _env['mongo_station_collection_name']!;
+    return _env['MONGO_STATION_COLLECTION']!;
   }
 
   String? get openChargeApiKey {
-    if (_env['open_charge_api_key'] == null) {
+    if (_env['OPEN_CHARGE_API_KEY'] == null) {
       throw Exception('OPEN_CHARGE_API_KEY is not set');
     }
-    return _env['open_charge_api_key'];
+    return _env['OPEN_CHARGE_API_KEY'];
   }
 
   String? get port {
